@@ -807,7 +807,7 @@ INSERT INTO Item VALUES(49,2,29,6,1.5);
 INSERT INTO Item VALUES(49,1,22,16,1.5);
 INSERT INTO Item VALUES(49,0,18,6,1.5);
 
-UPDATE Product SET Price=ROUND(Price*.1,2);
+--UPDATE Product SET Price=ROUND(Price*.1,2);
 UPDATE Item SET Cost=Cost*(SELECT Price FROM Product prod WHERE ProductID=prod.ID);
 UPDATE Invoice SET Total=SELECT SUM(Cost*Quantity) FROM Item WHERE InvoiceID=Invoice.ID;
 
